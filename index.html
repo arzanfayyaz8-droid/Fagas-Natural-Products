@@ -1008,17 +1008,27 @@
 <!-- Popup Notification -->
 <div id="formPopup" class="fixed top-5 right-5 z-50 p-4 rounded-lg shadow-lg text-white hidden"></div>
 
-<!-- FORM SCRIPT -->
 <script>
-document.getElementById("contactForm").addEventListener("submit", async function (e) {
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("formPopup");
+
+function showPopup(message, success = true) {
+  popup.textContent = message;
+  popup.style.backgroundColor = success ? "#22c55e" : "#ef4444"; // green/red
+  popup.classList.remove("hidden");
+
+  // Hide after 3 seconds
+  setTimeout(() => popup.classList.add("hidden"), 3000);
+}
+
+form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const status = document.getElementById("formStatus");
-  status.textContent = "Sending...";
+  showPopup("Sending...", true);
 
   const data = {
     name: e.target.name.value,
-    email: e.target.email.value, // visitor email
+    email: e.target.email.value,
     message: e.target.message.value
   };
 
@@ -1032,17 +1042,17 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const result = await res.json();
 
     if (result.success) {
-      status.textContent = "Message sent successfully!";
+      showPopup("Message sent successfully!", true);
       e.target.reset();
     } else {
-      status.textContent = "Failed to send message. Please try again.";
+      showPopup("Failed to send message. Try again.", false);
     }
-
   } catch (err) {
-    status.textContent = "Server error. Try again later.";
+    showPopup("Server error. Try again later.", false);
   }
 });
 </script>
+
 
     </div>
 </footer>
@@ -1113,4 +1123,5 @@ document.getElementById("contactForm").addEventListener("submit", async function
 </body>
 
 </html>
+
 
