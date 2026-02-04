@@ -35,7 +35,7 @@ exports.handler = async (event) => {
     // 2️⃣ Send confirmation email to visitor
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
-      to: email, // visitor's email
+      to: email,
       subject: "Thank you for contacting Fagas Natural Products!",
       text: `Hi ${name},\n\nThank you for reaching out! We have received your message:\n"${message}"\n\nWe will get back to you as soon as possible.\n\nBest regards,\nFagas Natural Products`,
     });
