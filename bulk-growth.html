@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk & Growth | Fagas Natural Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background: #050505; color: white; overflow-x: hidden; }
+        .mesh-gradient {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
+        }
+        .glow-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 30px 60px -12px rgba(16, 185, 129, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-modern {
+            background: linear-gradient(135deg, #10b981, #059669);
+            transition: all 0.3s;
+        }
+        .filter-chip {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .filter-chip.active { background: #10b981; color: black; font-weight: 700; border-color: #10b981; }
+        
+        /* Animation for filtering */
+        .product-item { transition: opacity 0.4s ease, transform 0.4s ease; }
+    </style>
+</head>
+<body>
+
+<div class="mesh-gradient"></div>
+
+<nav class="p-8 max-w-7xl mx-auto">
+    <a href="index.html" class="group text-emerald-400 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+</nav>
+
+<header class="pt-12 pb-16 px-6 text-center" data-aos="fade-down">
+    <div class="max-w-4xl mx-auto">
+        <span class="inline-block px-4 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-black tracking-[0.3em] mb-6 uppercase">
+            Manufacturing Line
+        </span>
+        <h1 class="text-6xl md:text-8xl font-black mb-6">
+            Bulk & <span class="gradient-text">Growth</span>
+        </h1>
+        
+        <div class="flex flex-wrap justify-center gap-3 mt-12">
+            <button onclick="filterProducts('all', this)" class="filter-chip active px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">All</button>
+            <button onclick="filterProducts('powder', this)" class="filter-chip px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">Powders</button>
+            <button onclick="filterProducts('liquid', this)" class="filter-chip px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">Liquids</button>
+        </div>
+    </div>
+</header>
+
+<section class="max-w-7xl mx-auto py-10 px-6 pb-32">
+    <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+        <div class="product-item powder glow-card rounded-[2.5rem] overflow-hidden flex flex-col group" data-aos="fade-up">
+            <div class="h-80 flex items-center justify-center p-12">
+                <img src="images/sa-dcp.jpg" alt="Fagas SA-DCP" class="max-h-full object-contain">
+            </div>
+            <div class="p-10 flex flex-col flex-grow">
+                <div class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-2">Powder Supplement</div>
+                <h3 class="text-2xl font-black text-white mb-3">FAGAS SA-DCP</h3>
+                <p class="text-gray-400 text-sm mb-8">Skeletal frame stabilizer for high-yielding dairy animals.</p>
+                <a href="sa-dcp-details.html" class="btn-modern block w-full py-5 rounded-2xl text-center text-xs font-black tracking-widest uppercase">View Technical Specs</a>
+            </div>
+        </div>
+
+        <div class="product-item powder glow-card rounded-[2.5rem] overflow-hidden flex flex-col group" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-80 flex items-center justify-center p-12">
+                <img src="images/diphas.jpg" alt="Fagas Di-Phas+" class="max-h-full object-contain">
+            </div>
+            <div class="p-10 flex flex-col flex-grow">
+                <div class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-2">Powder Supplement</div>
+                <h3 class="text-2xl font-black text-white mb-3">FAGAS DI-PHAS+</h3>
+                <p class="text-gray-400 text-sm mb-8">Commercial 18% DCP for intensive mineral correction.</p>
+                <a href="di-phas-details.html" class="btn-modern block w-full py-5 rounded-2xl text-center text-xs font-black tracking-widest uppercase">View Technical Specs</a>
+            </div>
+        </div>
+
+        <div class="product-item liquid glow-card rounded-[2.5rem] overflow-hidden flex flex-col group" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-80 flex items-center justify-center p-12">
+                <img src="images/meat milk.jpg" alt="Meat & Milk Grow" class="max-h-full object-contain">
+            </div>
+            <div class="p-10 flex flex-col flex-grow">
+                <div class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-2">Liquid Supplement</div>
+                <h3 class="text-2xl font-black text-white mb-3 uppercase">Meat & Milk Grow</h3>
+                <p class="text-gray-400 text-sm mb-8">Liquid catalyst for muscle deposition and yield output.</p>
+                <a href="meat-milk-grow-details.html" class="btn-modern block w-full py-5 rounded-2xl text-center text-xs font-black tracking-widest uppercase">View Technical Specs</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    AOS.init({ duration: 1200, once: true });
+
+    function filterProducts(category, btn) {
+        // 1. Update active button style
+        const buttons = document.querySelectorAll('.filter-chip');
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // 2. Filter logic
+        const items = document.querySelectorAll('.product-item');
+        items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+                item.style.display = 'flex';
+                // Trigger subtle fade in
+                setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.95)';
+                setTimeout(() => { item.style.display = 'none'; }, 400);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fagas Natural Products | Premier Veterinary Manufacturing</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* FIX 1: Prevent any element from pushing the screen horizontally */
+    html, body { 
+        overflow-x: hidden; 
+        width: 100%;
+        position: relative;
+    }
+    
+    body { 
+        font-family: 'Outfit', sans-serif; 
+        background: #050505; 
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    html { 
+        scroll-behavior: smooth; 
+    }
+    
+    /* Animated mesh gradient */
+    .mesh-gradient {
+        position: absolute;
+        inset: 0;
+        background: 
+            radial-gradient(at 0% 0%, rgba(14, 14, 14, 0.2) 0px, transparent 50%),
+            radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.2) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.2) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, rgba(239, 68, 68, 0.2) 0px, transparent 50%),
+            radial-gradient(at 100% 50%, rgba(251, 191, 36, 0.2) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, rgba(236, 72, 153, 0.2) 0px, transparent 50%),
+            radial-gradient(at 50% 100%, rgba(14, 165, 233, 0.2) 0px, transparent 50%),
+            radial-gradient(at 100% 100%, rgba(34, 211, 238, 0.2) 0px, transparent 50%);
+        animation: meshMove 20s ease infinite;
+        z-index: 1;
+    }
+    
+    @keyframes meshMove {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+    }
+    
+    .parallax-img {
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    /* Glowing card effect */
+    .glow-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.03); /* Changed from solid green to glass for better UI */
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .glow-card::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(45deg, #10b981, #3b82f6, #a855f7, #ec4899);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+    
+    .glow-card:hover::before { opacity: 1; }
+    
+    .glow-card:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 30px 60px -12px rgba(16, 185, 129, 0.4);
+    }
+    
+    .image-reveal {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .image-reveal::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.7s;
+    }
+    
+    .image-reveal:hover::after { left: 100%; }
+    .image-reveal img { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .image-reveal:hover img { transform: scale(1.15) rotate(2deg); }
+    
+    .gradient-text {
+        color: #16A34A;
+        background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    /* Animal decorations */
+    .animal-decoration {
+        position: absolute;
+        opacity: 0.03;
+        pointer-events: none;
+        animation: floatSlow 30s ease-in-out infinite;
+    }
+    
+    @keyframes floatSlow {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-30px) rotate(5deg); }
+    }
+    
+    /* Testimonial carousel - Optimized for Mobile */
+    .testimonial-carousel {
+        display: flex;
+        animation: smoothScroll 40s linear infinite;
+        width: max-content;
+    }
+    
+    .testimonial-carousel:hover { animation-play-state: paused; }
+    
+    @keyframes smoothScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    .testimonial-modern {
+        flex-shrink: 0;
+        /* FIX 2: Responsive width for mobile */
+        width: 85vw; 
+        max-width: 450px;
+        margin-right: 2rem;
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 2.5rem;
+        transition: all 0.4s;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testimonial-modern::before {
+        content: '"';
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        font-size: 80px;
+        color: rgba(16, 185, 129, 0.2);
+        font-family: Georgia, serif;
+    }
+    
+    /* FIX 3: Desktop adjustment for cards */
+    @media (min-width: 1024px) {
+        .testimonial-modern { width: 450px; }
+    }
+
+    .navbar-ultra {
+        background: rgba(5, 5, 5, 0.7);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .hero-media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+        filter: brightness(0.6);
+    }
+    
+    .stat-modern {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        transition: all 0.3s;
+    }
+    
+    .category-modern {
+        position: relative;
+        background: rgba(10, 10, 10, 0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .category-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+    
+    .category-modern:hover .category-overlay { opacity: 1; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #10b981, #059669);
+        border-radius: 6px;
+    }
+
+    /* FIX 4: Responsive typography */
+    @media (max-width: 768px) {
+        h1 { font-size: 3.5rem !important; }
+        .hero-media { object-position: center; }
+    }
+</style>
+</head>
+<body class="text-white">
+
+<!-- Ultra Modern Navbar -->
+<nav class="navbar-ultra fixed top-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-5">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <img src="images/logo.png" alt="Fagas Logo" class="h-16 w-20 object-contain relative z-10">
+                    <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-500 blur-2xl opacity-40"></div>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black gradient-text">FAGAS</h1>
+                    <p class="text-xs text-gray-500 tracking-widest font-medium">NATURAL PRODUCTS</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#home" class="text-sm font-semibold hover:text-emerald-400 transition-colors">Home</a>
+                <a href="#categories" class="text-sm font-semibold hover:text-emerald-400 transition-colors">Products</a>
+                <a href="#leadership" class="text-sm font-semibold hover:text-emerald-400 transition-colors">Leadership</a>
+                <a href="#reviews" class="text-sm font-semibold hover:text-emerald-400 transition-colors">Reviews</a>
+                <a href="#contact" class="text-sm font-semibold hover:text-emerald-400 transition-colors">Contact</a>
+            </div>
+            
+            <!-- CTA -->
+            <a href="https://wa.me/923146630682" class="btn-modern hidden md:flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Get Quote</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Large Animal Images -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <!-- Background image -->
+    <img src="https://regenerationinternational.org/wp-content/uploads/bigstock-Dairy-Cow-Grazing-In-A-Field-383755871-1536x1025.jpg" 
+         alt="Hero Background" 
+         class="hero-media">
+    
+    <!-- Mesh gradient overlay -->
+    <div class="mesh-gradient absolute inset-0"></div>
+    
+    <!-- Animal decorations -->
+    <div class="animal-decoration" style="top: 10%; left: 5%; font-size: 200px;">
+        <i class="fas fa-cow text-emerald-500"></i>
+    </div>
+    <div class="animal-decoration" style="top: 60%; right: 10%; font-size: 180px;">
+        <i class="fas fa-horse text-blue-500"></i>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Left content -->
+            <div data-aos="fade-right">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-xl mb-8">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    <span class="text-sm font-bold text-emerald-400">Manufacturing Excellence Since 2000</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-none">
+                    <span class="block text-white">Advanced</span>
+                    <span class="gradient-text block">Vet Solutions</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+                    Pioneering high-efficacy natural formulations for the global livestock industry. 
+                    <span class="text-emerald-400 font-semibold">We bridge nature and science</span> 
+                    to maximize productivity.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mb-16">
+                    <a href="#categories" class="btn-modern group px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3">
+                        <span>Explore Products</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 rounded-full font-bold text-lg border-2 border-emerald-500 hover:bg-emerald-500/10 transition-all backdrop-blur-xl">
+                        Contact Us
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="stat-modern p-5 rounded-2xl text-center">
+                        <div class="text-emerald-400 text-3xl mb-2">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="text-3xl font-black text-white mb-1">25+</div>
+                        <div class="text-xs text-gray-400 font-medium">Years</div>
+                    </div>
+                    <div class="stat-modern p-5 rounded-2xl text-center">
+                        <div class="text-blue-400 text-3xl mb-2">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="text-3xl font-black text-white mb-1">20+</div>
+                        <div class="text-xs text-gray-400 font-medium">Products</div>
+                    </div>
+                    <div class="stat-modern p-5 rounded-2xl text-center">
+                        <div class="text-purple-400 text-3xl mb-2">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="text-3xl font-black text-white mb-1">500+</div>
+                        <div class="text-xs text-gray-400 font-medium">Clients</div>
+                    </div>
+                    <div class="stat-modern p-5 rounded-2xl text-center">
+                        <div class="text-pink-400 text-3xl mb-2">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="text-3xl font-black text-white mb-1">100%</div>
+                        <div class="text-xs text-gray-400 font-medium">Natural</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right side - Animal image grid -->
+            <div class="hidden lg:grid grid-cols-2 gap-4" data-aos="fade-left">
+                <div class="image-reveal rounded-3xl overflow-hidden h-64">
+                    <img src="https://th.bing.com/th/id/R.61d0b975366a931508e543f300a28f62?rik=So7jj1UglnwlAA&pid=ImgRaw&r=0" 
+                         alt="Cow" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="image-reveal rounded-3xl overflow-hidden h-64">
+                    <img src="https://www.lemantus.com/wp-content/uploads/2023/06/new-Feature-Image.jpg" 
+                         alt="Poultry" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="image-reveal rounded-3xl overflow-hidden h-64 col-span-2">
+                    <img src="https://i.pinimg.com/originals/95/94/47/9594470f753aa9e266fe21aede1d0063.jpg" 
+                         alt="Livestock" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <a href="#categories" class="flex flex-col items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors animate-bounce">
+            <span class="text-xs font-semibold">Scroll Down</span>
+            <i class="fas fa-chevron-down text-xl"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Product Categories with Animal Images -->
+<section id="categories" class="py-32 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-900/5 to-transparent"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-20" data-aos="fade-up">
+            <div class="inline-block px-6 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-xl mb-6">
+                <span class="text-sm font-bold gradient-text">OUR PORTFOLIO</span>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-black mb-6">
+                <span class="gradient-text">Product Categories</span>
+            </h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                Comprehensive solutions for every aspect of livestock health and productivity
+            </p>
+        </div>
+        
+        <!-- Categories Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Category 1 -->
+            <div class="category-modern rounded-3xl overflow-hidden group" data-aos="zoom-in">
+                <div class="relative h-80 overflow-hidden">
+                    <img src="https://th.bing.com/th/id/R.ef70038ab721ad714907522989dd3cf6?rik=Mxul4y6a%2bdG2XQ&pid=ImgRaw&r=0" 
+                         alt="Bulk & Growth" 
+                         class="category-image w-full h-full object-cover">
+                    <div class="category-overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-full bg-emerald-500/20 backdrop-blur-xl flex items-center justify-center border border-emerald-500/30">
+                                <i class="fas fa-weight-scale text-emerald-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-black text-white">Bulk & Growth</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Mineral support & nutritional growth supplements.</p>
+                        <a href="bulk-growth.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 font-bold hover:bg-emerald-600 transition-all group-hover:gap-4">
+                            <span>View Products</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 2 -->
+            <div class="category-modern rounded-3xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="100">
+                <div class="relative h-80 overflow-hidden">
+                    <img src="https://a.storyblok.com/f/270554/1920x1280/7d8400d381/1909968_bluespray_woundcare_calf.webp/m/3840x0/filters:quality(75)" 
+                         alt="Wound & External Care" 
+                         class="category-image w-full h-full object-cover">
+                    <div class="category-overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 backdrop-blur-xl flex items-center justify-center border border-blue-500/30">
+                                <i class="fas fa-bandage text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-black text-white">Wound Care</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Advanced healing solutions for wounds.</p>
+                        <a href="wound-external-care.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-500 font-bold hover:bg-blue-600 transition-all group-hover:gap-4">
+                            <span>View Products</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 3 -->
+            <div class="category-modern rounded-3xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="200">
+                <div class="relative h-80 overflow-hidden">
+                    <img src="images/digestion.png" 
+                         alt="Digestive & Rumen Health" 
+                         class="category-image w-full h-full object-cover">
+                    <div class="category-overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/20 backdrop-blur-xl flex items-center justify-center border border-purple-500/30">
+                                <i class="fas fa-pills text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-black text-white">Digestive Health</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Support for digestion and rumen health.</p>
+                        <a href="digestive-rumen-health.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-purple-500 font-bold hover:bg-purple-600 transition-all group-hover:gap-4">
+                            <span>View Products</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 4 -->
+            <div class="category-modern rounded-3xl overflow-hidden group" data-aos="zoom-in">
+                <div class="relative h-80 overflow-hidden">
+                    <img src="https://www.critterbabies.com/wp-content/uploads/2014/11/cow-calf-05.jpg" 
+                         alt="Reproductive & Maternal Health" 
+                         class="category-image w-full h-full object-cover">
+                    <div class="category-overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-full bg-pink-500/20 backdrop-blur-xl flex items-center justify-center border border-pink-500/30">
+                                <i class="fas fa-heart text-pink-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-black text-white">Maternal Health</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Supporting fertility and maternal care.</p>
+                        <a href="reproductive-maternal.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-pink-500 font-bold hover:bg-pink-600 transition-all group-hover:gap-4">
+                            <span>View Products</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 5 -->
+            <div class="category-modern rounded-3xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="100">
+                <div class="relative h-80 overflow-hidden">
+                    <img src="https://th.bing.com/th/id/R.defe4db4f5ea9e03e66ae8286dca980d?rik=nZDmkjaPO%2bz%2f4g&pid=ImgRaw&r=0" 
+                         alt="Poultry & Avian Care" 
+                         class="category-image w-full h-full object-cover">
+                    <div class="category-overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-full bg-orange-500/20 backdrop-blur-xl flex items-center justify-center border border-orange-500/30">
+                                <i class="fas fa-dove text-orange-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-black text-white">Poultry Care</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Natural remedies for optimal bird health.</p>
+                        <a href="poultry-avian.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 font-bold hover:bg-orange-600 transition-all group-hover:gap-4">
+                            <span>View Products</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 6 -->
+            <div class="category-modern rounded-3xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="200">
+                <div class="relative h-80 overflow-hidden">
+                    <img src="https://www.shutterstock.com/shutterstock/videos/1098003597/thumb/1.jpg?ip=x480" 
+                         alt="Respiratory Care" 
+                         class="category-image w-full h-full object-cover">
+                    <div class="category-overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-full bg-cyan-500/20 backdrop-blur-xl flex items-center justify-center border border-cyan-500/30">
+                                <i class="fas fa-lungs text-cyan-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-black text-white">Respiratory Care</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Specialized lung & udder health solutions.</p>
+                        <a href="respiratory.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-500 font-bold hover:bg-cyan-600 transition-all group-hover:gap-4">
+                            <span>View Products</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Animal Gallery Section -->
+<section class="py-32 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/10 to-blue-900/10"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <div class="inline-block px-6 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-xl mb-6">
+                <span class="text-sm font-bold gradient-text">TRUSTED BY FARMS</span>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-black mb-6">
+                <span class="gradient-text">Healthy Animals, Happy Farmers</span>
+            </h2>
+        </div>
+        
+        <!-- Large animal images showcase -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
+            <div class="image-reveal rounded-3xl overflow-hidden h-72 col-span-2">
+                <img src="images/1.png" 
+                     alt="Dairy Cow" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="image-reveal rounded-3xl overflow-hidden h-72">
+                <img src="https://th.bing.com/th/id/R.f608d899b549fe932042763a0a5e1d9c?rik=JCdKvOWEZWvhBg&pid=ImgRaw&r=0" 
+                     alt="Cow Calf" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="image-reveal rounded-3xl overflow-hidden h-72">
+                <img src="https://th.bing.com/th/id/R.f7d50017b63522df3e6b5b4c513a82ed?rik=aNoF4tVDU4XAow&pid=ImgRaw&r=0" 
+                     alt="Chickens" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="image-reveal rounded-3xl overflow-hidden h-72">
+                <img src="https://img.freepik.com/free-photo/young-indian-farmer-turmeric-agriculture-field_54391-4839.jpg?size=626&ext=jpg" 
+                     alt="Calf Care" 
+                     class="w-full h-full object-cover">
+            </div>
+           <div class="image-reveal rounded-3xl overflow-hidden h-72">
+                <img src="https://th.bing.com/th/id/R.32124cc9d3347b2783f83d540f9d0f73?rik=jls6qN7glbVKdA&riu=http%3a%2f%2film.com.pk%2fwp-content%2fuploads%2f2015%2f10%2fStart-Cattle-Farming-In-Pakistan.jpg&ehk=wDCs3BK3d9Qko5cwvDrB7vmBYhO0hwDbDJriKxQtFcE%3d&risl=&pid=ImgRaw&r=0" 
+                     alt="Livestock" 
+                     class="w-full h-full object-cover">
+            </div>
+             <div class="image-reveal rounded-3xl overflow-hidden h-72 col-span-2">
+                <img src="images/2.png" 
+                     alt="Cattle" 
+                     class="w-full h-full object-cover">
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Moving Reviews Section -->
+<section id="reviews" class="py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-16">
+        <div class="text-center" data-aos="fade-up">
+            <div class="inline-block px-6 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-xl mb-6">
+                <span class="text-sm font-bold gradient-text">CLIENT TESTIMONIALS</span>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-black mb-6">
+                <span class="gradient-text">What Our Clients Say</span>
+            </h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                Trusted by livestock owners and veterinarians nationwide
+            </p>
+        </div>
+    </div>
+    
+    <!-- Infinite scrolling testimonials -->
+    <div class="relative">
+        <div class="testimonial-carousel">
+            <!-- Review 1 -->
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "Fagas products have significantly improved the health of our livestock. The natural formulations are reliable and show real results. Highly recommend!"
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-blue-500 flex items-center justify-center text-2xl font-black">
+                        AK
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Ahmed Khan</h4>
+                        <p class="text-sm text-gray-400">Livestock Owner</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 2 -->
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "Excellent customer support and prompt delivery. Fagas is my trusted supplier for all veterinary needs. The quality is consistently outstanding."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl font-black">
+                        AA
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Abdullah Ahmed</h4>
+                        <p class="text-sm text-gray-400">Farm Manager</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 3 -->
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "High-efficacy natural products that actually work. Our farm productivity has increased tremendously since we started using Fagas products."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-2xl font-black">
+                        BS
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Bilal Shah</h4>
+                        <p class="text-sm text-gray-400">Veterinarian</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 4 -->
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "Outstanding quality and consistency. My animals have never been healthier. The natural approach makes a real difference!"
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-orange-500 flex items-center justify-center text-2xl font-black">
+                        MR
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Muhammad Raza</h4>
+                        <p class="text-sm text-gray-400">Dairy Farmer</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 5 -->
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "Professional service and amazing results. The natural approach makes a real difference in animal health and wellbeing."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center text-2xl font-black">
+                        FK
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Ali Khan</h4>
+                        <p class="text-sm text-gray-400">Poultry Owner</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 6 -->
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "Best veterinary products in the market. The team is knowledgeable and always ready to help. Five stars all the way!"
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-500 to-emerald-500 flex items-center justify-center text-2xl font-black">
+                        SH
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Saeed Hassan</h4>
+                        <p class="text-sm text-gray-400">Veterinarian</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Duplicate for seamless loop -->
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "Fagas products have significantly improved the health of our livestock. The natural formulations are reliable and show real results. Highly recommend!"
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-blue-500 flex items-center justify-center text-2xl font-black">
+                        AK
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Ahmed Khan</h4>
+                        <p class="text-sm text-gray-400">Livestock Owner</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "Excellent customer support and prompt delivery. Fagas is my trusted supplier for all veterinary needs. The quality is consistently outstanding."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl font-black">
+                        AA
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Abdullah Ahmed</h4>
+                        <p class="text-sm text-gray-400">Farm Manager</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-modern">
+                <div class="flex gap-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg relative z-10">
+                    "High-efficacy natural products that actually work. Our farm productivity has increased tremendously since we started using Fagas products."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-2xl font-black">
+                        BS
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl">Bilal Shah</h4>
+                        <p class="text-sm text-gray-400">Veterinarian</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-32 relative">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <div class="inline-block px-6 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-xl mb-6">
+                <span class="text-sm font-bold gradient-text">FAQ</span>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-black mb-6">
+                <span class="gradient-text">Frequently Asked Questions</span>
+            </h2>
+        </div>
+        
+        <div class="space-y-6">
+            <details class="faq-item group rounded-2xl p-8 hover:border-emerald-500/50" data-aos="fade-up">
+                <summary class="font-bold text-2xl cursor-pointer flex justify-between items-center">
+                    <span>Are your products suitable for all livestock?</span>
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition-transform text-emerald-400 text-2xl"></i>
+                </summary>
+                <p class="mt-6 text-gray-300 leading-relaxed text-lg">
+                    Yes, our formulations are designed for a wide range of livestock including cattle, poultry, horses, and more. 
+                    Specific usage instructions are included with each product to ensure optimal results and safety.
+                </p>
+            </details>
+            
+            <details class="faq-item group rounded-2xl p-8 hover:border-emerald-500/50" data-aos="fade-up" data-aos-delay="100">
+                <summary class="font-bold text-2xl cursor-pointer flex justify-between items-center">
+                    <span>Do you offer wholesale partnerships?</span>
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition-transform text-emerald-400 text-2xl"></i>
+                </summary>
+                <p class="mt-6 text-gray-300 leading-relaxed text-lg">
+                    Absolutely! We offer competitive wholesale pricing for bulk orders. Contact us via WhatsApp or the inquiry form 
+                    to discuss partnership opportunities and special rates for distributors.
+                </p>
+            </details>
+            
+            <details class="faq-item group rounded-2xl p-8 hover:border-emerald-500/50" data-aos="fade-up" data-aos-delay="200">
+                <summary class="font-bold text-2xl cursor-pointer flex justify-between items-center">
+                    <span>Where are your products manufactured?</span>
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition-transform text-emerald-400 text-2xl"></i>
+                </summary>
+                <p class="mt-6 text-gray-300 leading-relaxed text-lg">
+                    All products are manufactured in our state-of-the-art facility in Pakistan with strict quality control measures 
+                    and ISO compliance standards to ensure the highest quality.
+                </p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- Leadership Section -->
+<section id="leadership" class="py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <div class="inline-block px-6 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-xl mb-6">
+                <span class="text-sm font-bold gradient-text">THE BOARD</span>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-black mb-6">
+                <span class="gradient-text">Manufacturing Leadership</span>
+            </h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                Decades of expertise driving veterinary excellence
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Leader 1 -->
+            <div class="leader-card rounded-3xl overflow-hidden flex flex-col md:flex-row" data-aos="fade-right">
+                <div class="md:w-1/3 bg-gradient-to-br from-emerald-500 to-blue-500 p-12 flex items-center justify-center">
+                    <i class="fa-solid fa-user-tie text-9xl text-white/30"></i>
+                </div>
+                <div class="p-10 md:w-2/3 flex flex-col justify-center">
+                    <h3 class="text-3xl font-black mb-2 gradient-text">Fayyaz Ahmed Awan</h3>
+                    <p class="text-emerald-400 text-sm font-bold mb-6 tracking-widest">CHIEF EXECUTIVE OFFICER</p>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        30+ years of manufacturing expertise, leading Fagas Natural with a vision for industrial 
+                        excellence and innovation in veterinary solutions.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Leader 2 -->
+            <div class="leader-card rounded-3xl overflow-hidden flex flex-col md:flex-row" data-aos="fade-left" data-aos-delay="100">
+                <div class="md:w-1/3 bg-gradient-to-br from-blue-500 to-purple-500 p-12 flex items-center justify-center">
+                    <i class="fa-solid fa-user-gear text-9xl text-white/30"></i>
+                </div>
+                <div class="p-10 md:w-2/3 flex flex-col justify-center">
+                    <h3 class="text-3xl font-black mb-2 gradient-text">Arzan Fayyaz Awan</h3>
+                    <p class="text-blue-400 text-sm font-bold mb-6 tracking-widest">MANAGING DIRECTOR</p>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Directing global operations and distribution networks for high-scale veterinary supply 
+                        and international market expansion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<footer id="contact" class="py-32 relative bg-black">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+
+      <!-- Contact info -->
+      <div>
+        <h3 class="text-5xl md:text-6xl font-black mb-8 text-white">Let's Connect</h3>
+        <p class="text-xl text-white mb-12">
+          Ready to elevate your livestock health? Get in touch with us today.
+        </p>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-5 p-6 rounded-2xl border border-white bg-black">
+            <div class="w-14 h-14 flex items-center justify-center border border-white rounded-xl">
+              <i class="fa-solid fa-location-dot text-white text-2xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl text-white">Location</h4>
+              <p class="text-white">Multan, Punjab, Pakistan</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5 p-6 rounded-2xl border border-white bg-black">
+            <div class="w-14 h-14 flex items-center justify-center border border-white rounded-xl">
+              <i class="fa-solid fa-envelope text-white text-2xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl text-white">Email</h4>
+              <p class="text-white">info@fagasnatural.com</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5 p-6 rounded-2xl border border-white bg-black">
+            <div class="w-14 h-14 flex items-center justify-center border border-white rounded-xl">
+              <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl text-white">WhatsApp</h4>
+              <p class="font-bold text-white">+92 3006380682</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="p-10 rounded-3xl border border-white bg-black">
+        <h4 class="text-3xl font-black mb-8 text-white">Send Us a Message</h4>
+
+        <form id="contactForm" class="space-y-6">
+
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Full Name"
+            class="w-full bg-black border border-white rounded-xl p-5 text-white placeholder-white"
+          />
+
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Email Address"
+            class="w-full bg-black border border-white rounded-xl p-5 text-white placeholder-white"
+          />
+
+          <textarea
+            name="message"
+            rows="5"
+            required
+            placeholder="Your Message"
+            class="w-full bg-black border border-white rounded-xl p-5 text-white placeholder-white resize-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full py-5 rounded-xl font-bold text-white border border-white bg-black"
+          >
+            Send Message
+          </button>
+
+        </form>
+
+        <p id="formStatus" class="text-white mt-4"></p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FORM SCRIPT -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const status = document.getElementById("formStatus");
+  status.textContent = "Sending...";
+
+  const data = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    message: e.target.message.value
+  };
+
+  try {
+    const res = await fetch("/.netlify/functions/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      status.textContent = "Message sent successfully!";
+      e.target.reset();
+    } else {
+      status.textContent = "Failed to send message.";
+    }
+
+  } catch (err) {
+    status.textContent = "Server error. Try again later.";
+  }
+});
+</script>
+
+    </div>
+</footer>
+
+    </div>
+</footer>
+
+
+        
+        <!-- Footer bottom -->
+        <div class="border-t border-white/10 pt-8 text-center">
+            <p class="text-gray-500">© 2026 Fagas Natural Products. All rights reserved. | Verified Pharmaceutical Manufacturer</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/923006380682?text=Hello!%20I%20am%20interested%20in%20Fagas%20Natural%20Products." 
+   class="fixed bottom-8 right-8 w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white shadow-2xl shadow-green-500/50 hover:scale-110 transition-all z-50 animate-bounce">
+    <i class="fa-brands fa-whatsapp text-4xl"></i>
+</a>
+
+<!-- Scroll to top -->
+<button id="scrollTopBtn" class="fixed bottom-32 right-8 w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-blue-500 flex items-center justify-center text-white shadow-xl shadow-emerald-500/50 hover:scale-110 transition-all z-50 hidden">
+    <i class="fa-solid fa-arrow-up text-2xl"></i>
+</button>
+
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1200,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+
+    // Scroll to top
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+        scrollTopBtn.style.display = window.scrollY > 400 ? "flex" : "none";
+    });
+    scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({top: 0, behavior: "smooth"});
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(5, 5, 5, 0.95)';
+            navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
+        } else {
+            navbar.style.background = 'rgba(5, 5, 5, 0.7)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+
+    // Parallax effect for hero image
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax-img');
+        parallaxElements.forEach(element => {
+            element.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    });
+</script>
+
+</body>
+</html>

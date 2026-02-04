@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digestive & Rumen Health | Fagas Natural Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background: #050505; color: white; overflow-x: hidden; }
+        .mesh-gradient {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
+        }
+        .glow-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 30px 60px -12px rgba(16, 185, 129, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .filter-chip {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .filter-chip.active { background: #10b981; color: black; font-weight: 700; border-color: #10b981; }
+        .btn-modern {
+            background: linear-gradient(135deg, #10b981, #059669);
+            transition: all 0.3s;
+        }
+        .product-item { transition: opacity 0.4s ease, transform 0.4s ease; }
+    </style>
+</head>
+<body>
+
+<div class="mesh-gradient"></div>
+
+<nav class="p-8 max-w-7xl mx-auto">
+    <a href="index.html" class="text-emerald-400 font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+</nav>
+
+<header class="pt-12 pb-16 px-6 text-center" data-aos="fade-down">
+    <div class="max-w-4xl mx-auto">
+        <span class="inline-block px-4 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-black tracking-[0.3em] mb-6 uppercase">
+            Gastrointestinal Line
+        </span>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 uppercase">Digestive & <span class="gradient-text">Rumen</span></h1>
+        
+        <div class="flex flex-wrap justify-center gap-3 mt-12">
+            <button onclick="filterProducts('all', this)" class="filter-chip active px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">All</button>
+            <button onclick="filterProducts('liquid', this)" class="filter-chip px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">Liquids</button>
+            <button onclick="filterProducts('powder', this)" class="filter-chip px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">Powders</button>
+        </div>
+    </div>
+</header>
+
+<section class="max-w-7xl mx-auto py-10 px-6 pb-32">
+    <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div class="product-item liquid glow-card rounded-3xl overflow-hidden flex flex-col group" data-aos="fade-up">
+            <div class="h-80 bg-gradient-to-b from-white/5 to-transparent flex items-center justify-center p-10 transition-transform group-hover:scale-105 duration-500">
+                <img src="images/vetegest.jpg" alt="Fagas Vetegest" class="max-h-full object-contain drop-shadow-2xl">
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+                <h3 class="text-2xl font-black text-white mb-3 tracking-tight">FAGAS VETEGEST</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Technical tonic for improving digestion, stimulating appetite, and treating rumen disturbances.</p>
+                <div class="mt-auto">
+                    <a href="vetegest-details.html" class="btn-modern block w-full py-4 rounded-xl text-center text-xs font-black tracking-widest uppercase hover:scale-105 transition-transform">View Technical Specs</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-item liquid glow-card rounded-3xl overflow-hidden flex flex-col group" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-80 bg-gradient-to-b from-white/5 to-transparent flex items-center justify-center p-10 transition-transform group-hover:scale-105 duration-500">
+                <img src="images/calconil.jpg" alt="Fagas Carminato Colic" class="max-h-full object-contain drop-shadow-2xl">
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+                <h3 class="text-2xl font-black text-white mb-3 tracking-tight uppercase">Carminato Colic</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">High-speed relief for gas, bloating, and stomach pain in livestock.</p>
+                <div class="mt-auto">
+                    <a href="carminato-details.html" class="btn-modern block w-full py-4 rounded-xl text-center text-xs font-black tracking-widest uppercase hover:scale-105 transition-transform">View Technical Specs</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-item powder glow-card rounded-3xl overflow-hidden flex flex-col group" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-80 bg-gradient-to-b from-white/5 to-transparent flex items-center justify-center p-10 transition-transform group-hover:scale-105 duration-500">
+                <img src="images/stomach.jpg" alt="Hazmovit Stomach Powder" class="max-h-full object-contain drop-shadow-2xl">
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+                <h3 class="text-2xl font-black text-white mb-3 tracking-tight uppercase">Hazmovit Powder</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">General digestive support optimized for high production dairy animals.</p>
+                <div class="mt-auto">
+                    <a href="hazmovit-details.html" class="btn-modern block w-full py-4 rounded-xl text-center text-xs font-black tracking-widest uppercase hover:scale-105 transition-transform">View Technical Specs</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-item liquid glow-card rounded-3xl overflow-hidden flex flex-col group" data-aos="fade-up">
+            <div class="h-80 bg-gradient-to-b from-white/5 to-transparent flex items-center justify-center p-10 transition-transform group-hover:scale-105 duration-500">
+                <img src="images/mixture.jpg" alt="Carminax Mixture" class="max-h-full object-contain drop-shadow-2xl">
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+                <h3 class="text-2xl font-black text-white mb-3 tracking-tight uppercase">Carminax Mixture</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Professional-grade comprehensive liquid mixture for various digestive upsets.</p>
+                <div class="mt-auto">
+                    <a href="carminax-details.html" class="btn-modern block w-full py-4 rounded-xl text-center text-xs font-black tracking-widest uppercase hover:scale-105 transition-transform">View Technical Specs</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    AOS.init({ duration: 1200, once: true });
+    function filterProducts(category, btn) {
+        const buttons = document.querySelectorAll('.filter-chip');
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const items = document.querySelectorAll('.product-item');
+        items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+                item.style.display = 'flex';
+                setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.95)';
+                setTimeout(() => { item.style.display = 'none'; }, 400);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

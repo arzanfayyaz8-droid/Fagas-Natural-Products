@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fagas Bird Safe | Technical Specifications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background: #050505; color: white; }
+        .mesh-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .tech-border {
+            border-left: 4px solid #10b981;
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.1) 0%, transparent 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Mobile-First Responsive Badges */
+        .badge-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        @media (max-width: 640px) {
+            .badge-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="mesh-bg"></div>
+
+<nav class="p-6 max-w-7xl mx-auto">
+    <a href="poultry-avian.html" class="group text-emerald-400 hover:text-white transition-colors flex items-center gap-2 font-bold">
+        <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i> Back to Category
+    </a>
+</nav>
+
+<main class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        
+        <div class="lg:sticky lg:top-10 h-fit" data-aos="zoom-in">
+            <div class="glass-panel rounded-[3rem] p-12 relative overflow-hidden flex justify-center">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-600/20 blur-[100px]"></div>
+                <img src="images/bird safe.jpg" alt="Fagas Bird Safe Drops" class="max-h-[550px] object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+            </div>
+            
+            <div class="badge-container mt-8">
+                <div class="glass-panel p-4 rounded-2xl text-center border-emerald-500/30">
+                    <span class="block text-emerald-400 font-black text-xl">Immune</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500 font-bold leading-tight">Booster</span>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl text-center border-blue-500/30">
+                    <span class="block text-blue-400 font-black text-xl">Fast</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500 font-bold leading-tight">Recovery</span>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl text-center border-purple-500/30">
+                    <span class="block text-purple-400 font-black text-xl">Stress</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500 font-bold leading-tight">Relief</span>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="space-y-12 pb-24">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
+                    <i class="fas fa-feather-pointed"></i> Specialized Avian Healthcare
+                </div>
+                <h1 class="text-6xl font-black mb-6 leading-none uppercase">Fagas Bird <span class="gradient-text">Safe</span></h1>
+                
+                <h2 class="text-2xl font-bold text-white mb-4">Product Overview</h2>
+                <p class="text-xl text-gray-400 leading-relaxed">
+                    Fagas Bird Safe is a high-efficacy recovery formula specifically designed for poultry and pet birds. It provides rapid systemic support to counteract physiological stress and boosts the natural defense mechanisms during disease outbreaks.
+                </p>
+            </div>
+
+            <section>
+                <h3 class="text-sm font-black text-emerald-400 uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
+                    <i class="fas fa-paw"></i> Target Species
+                </h3>
+                <div class="tech-border p-6 rounded-r-2xl">
+                    <p class="text-gray-300 font-bold uppercase">
+                        Broilers, Layers, Breeders, Fancy Birds, and Pigeons.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-sm font-black text-emerald-400 uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
+                    <i class="fas fa-box-open"></i> Available Packing
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 glass-panel rounded-xl text-sm font-black text-emerald-400 border-emerald-500/30">15 ml Drops</span>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-sm font-black text-emerald-400 uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
+                    <i class="fas fa-gears"></i> Mode of Action
+                </h3>
+                <div class="space-y-4 text-gray-400">
+                    <p>• <strong>Immunomodulation:</strong> Stimulates the production of antibodies to fight off viral and bacterial threats.</p>
+                    <p>• <strong>Anti-Stress:</strong> Stabilizes metabolic functions during extreme weather or transport-related stress.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-sm font-black text-emerald-400 uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
+                    <i class="fas fa-check-double"></i> Key Benefits
+                </h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
+                    <li class="flex items-start gap-3"><i class="fas fa-circle-check text-emerald-500 mt-1"></i> Rapid recovery from viral diseases</li>
+                    <li class="flex items-start gap-3"><i class="fas fa-circle-check text-emerald-500 mt-1"></i> Enhances natural bird vitality</li>
+                    <li class="flex items-start gap-3"><i class="fas fa-circle-check text-emerald-500 mt-1"></i> Reduces mortality in early stages</li>
+                    <li class="flex items-start gap-3"><i class="fas fa-circle-check text-emerald-500 mt-1"></i> Ideal for vaccine reaction stress</li>
+                </ul>
+            </section>
+
+            <section class="glass-panel p-8 rounded-[2rem] border-emerald-500/20">
+                <h3 class="text-lg font-black uppercase mb-6 flex items-center gap-3">
+                    <i class="fas fa-droplet text-emerald-400"></i> Dosage & Administration
+                </h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                        <span class="block font-bold text-white mb-1">Standard Treatment</span>
+                        <span class="text-emerald-400 font-black text-xl">10-15 Drops in Drinking Water</span>
+                        <p class="text-xs text-gray-500 mt-2">Administer daily for 3-5 days during stress periods or as directed by a specialist.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-sm font-black text-emerald-400 uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
+                    <i class="fas fa-warehouse"></i> Storage & Safety
+                </h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li>• Store in a cool place away from sunlight</li>
+                    <li>• For veterinary oral use in birds only</li>
+                    <li>• Shake well before each use</li>
+                </ul>
+            </section>
+
+            <a href="https://wa.me/923006380682?text=Inquiry: Fagas Bird Safe 15ml Drops" class="w-full flex items-center justify-center gap-4 bg-gradient-to-r from-emerald-600 to-blue-600 hover:scale-[1.02] transition-all py-6 rounded-2xl text-sm font-black uppercase tracking-[0.2em] shadow-lg shadow-emerald-500/20">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                Request Avian Healthcare Quote
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="py-12 text-center border-t border-white/5 mt-20">
+    <p class="text-gray-600 text-[10px] font-black uppercase tracking-[0.5em]">
+        © 2026 Fagas Natural Products — Global Veterinary Excellence
+    </p>
+</footer>
+
+<script>AOS.init({ duration: 1200, once: true });</script>
+
+</body>
+</html>
