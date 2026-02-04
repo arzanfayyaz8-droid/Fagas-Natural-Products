@@ -967,7 +967,6 @@
         <h4 class="text-3xl font-black mb-8 text-white">Send Us a Message</h4>
 
         <form id="contactForm" class="space-y-6">
-
           <input
             type="text"
             name="name"
@@ -998,11 +997,9 @@
           >
             Send Message
           </button>
-
         </form>
 
         <p id="formStatus" class="text-white mt-4"></p>
-
       </div>
     </div>
   </div>
@@ -1018,7 +1015,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
   const data = {
     name: e.target.name.value,
-    email: e.target.email.value,
+    email: e.target.email.value, // visitor email
     message: e.target.message.value
   };
 
@@ -1035,7 +1032,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
       status.textContent = "Message sent successfully!";
       e.target.reset();
     } else {
-      status.textContent = "Failed to send message.";
+      status.textContent = "Failed to send message. Please try again.";
     }
 
   } catch (err) {
@@ -1111,4 +1108,5 @@ document.getElementById("contactForm").addEventListener("submit", async function
 </script>
 
 </body>
+
 </html>
